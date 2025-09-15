@@ -1,264 +1,227 @@
-# 📘 Data Structures & Algorithms (DSA) – Detailed Syllabus
+# ☕ Core Java – Detailed Syllabus
 
 ### ⭐ Importance: ★★★★★ (5/5)
----
-Roadmap Link: [https://roadmap.sh/datastructures-and-algorithms]
-Resource: [https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/]
 
 ---
 
-## 1. **Foundations**
-- **Mathematical basics**
-  - Logarithms, Exponents
-  - Time & Space complexity
-  - Big-O, Big-Ω, Big-Θ
-  - Amortized analysis
-- **Algorithm paradigms**
-  - Brute force
-  - Divide & Conquer
-  - Greedy
-  - Dynamic Programming (DP)
-  - Backtracking
-  - Recursion & Iteration trade-offs
+## 1. **Java Basics**
+- **History & Features**
+  - JVM, JRE, JDK
+  - WORA (Write Once, Run Anywhere)
+- **Java program structure**
+  - Class, main method, identifiers
+  - Compilation & execution flow
+- **Data Types**
+  - Primitive types
+  - Reference types
+- **Operators**
+  - Arithmetic, Logical, Bitwise
+  - Ternary, instanceof
 
 ---
 
-## 2. **Complexity Analysis**
-- **Time complexity**
-  - Constant, Linear, Logarithmic, Quadratic, Polynomial, Exponential
-- **Space complexity**
-  - Memory allocation
-  - Recursion stack
-- **Best/Worst/Average case analysis**
-- **Practical runtime considerations**
-  - Cache, branch prediction, parallelism
+## 2. **Control Flow Statements**
+- **Decision-making**
+  - if, if-else, switch
+- **Loops**
+  - for, while, do-while
+  - Enhanced for-loop (for-each)
+- **Jump statements**
+  - break, continue, return
 
 ---
 
-## 3. **Arrays & Strings**
-- **Arrays**
-  - Traversal, Insertion, Deletion
-  - Prefix sums
-  - Sliding window techniques
-  - Two pointer techniques
-- **Strings**
-  - Basic operations: reversal, rotation, substring search
-  - Pattern matching algorithms
-    - Naïve approach
-    - KMP (Knuth-Morris-Pratt)
-    - Rabin-Karp
-    - Z-algorithm
-  - String hashing
-  - Tries (Prefix trees)
+## 3. **OOP Concepts in Java**
+- **Class & Objects**
+  - Fields, methods, constructors
+  - Object lifecycle
+- **Encapsulation**
+  - Access modifiers (public, private, protected, default)
+  - Getters & Setters
+- **Inheritance**
+  - extends keyword
+  - Multilevel & hierarchical inheritance
+  - Method overriding
+- **Polymorphism**
+  - Compile-time (method overloading)
+  - Runtime (method overriding)
+- **Abstraction**
+  - Abstract classes
+  - Interfaces (Java 8 default & static methods)
+- **Composition vs Inheritance**
+- **Association, Aggregation, Composition**
 
 ---
 
-## 4. **Linked Lists**
-- **Singly Linked List**
-  - Creation, Insertion, Deletion
-  - Reversal
-  - Cycle detection (Floyd’s cycle detection)
-- **Doubly Linked List**
-- **Circular Linked List**
-- **Applications**
-  - Implementing stacks/queues
-  - LRU cache (with hashmap + DLL)
+## 4. **Memory Management**
+- **Stack vs Heap**
+- **Garbage Collection**
+  - finalize() method
+  - JVM Garbage Collectors (Serial, Parallel, G1, ZGC)
+- **Memory leaks in Java**
+- **Escape analysis & object allocation**
 
 ---
 
-## 5. **Stacks & Queues**
-- **Stack**
-  - Implementation (array, linked list)
-  - Applications:
-    - Balanced parentheses
-    - Expression evaluation (Infix → Postfix/Prefix)
-    - Function call stacks
-- **Queue**
-  - Simple queue, Circular queue
-  - Deque (Double-ended queue)
-  - Priority Queue / Heap-based queue
-- **Special Queues**
-  - Monotonic queue
-  - Blocking queue
+## 5. **Strings & Wrapper Classes**
+- **String handling**
+  - String, StringBuffer, StringBuilder
+  - String Pool (interning)
+- **Wrapper classes**
+  - Autoboxing & Unboxing
+- **Immutable objects**
 
 ---
 
-## 6. **Hashing**
-- **Hash functions**
-  - Division method, Multiplication method, Universal hashing
-- **Collision resolution**
-  - Chaining
-  - Open addressing (linear probing, quadratic probing, double hashing)
-- **Applications**
-  - Hashmap / Hashset
-  - Counting frequencies
-  - Subarray sum problems
-  - Caching
+## 6. **Exception Handling**
+- **Types of exceptions**
+  - Checked vs Unchecked
+  - Error vs Exception
+- **Keywords**
+  - try, catch, finally, throw, throws
+- **Custom exceptions**
+- **Best practices**
+  - Exception hierarchy
+  - Avoid swallowing exceptions
 
 ---
 
-## 7. **Recursion & Backtracking**
-- **Recursion fundamentals**
-  - Tail vs Non-tail recursion
-  - Recursive tree tracing
-- **Backtracking**
-  - N-Queens
-  - Sudoku solver
-  - Rat in a maze
-  - Word search
+## 7. **Java Collections Framework (JCF)**
+- **Collection Interfaces**
+  - List, Set, Queue, Map
+- **Implementations**
+  - ArrayList, LinkedList
+  - HashSet, TreeSet, LinkedHashSet
+  - HashMap, TreeMap, LinkedHashMap
+  - PriorityQueue, ArrayDeque
+- **Utility classes**
+  - Collections, Arrays
+- **Comparable vs Comparator**
+- **Fail-fast vs Fail-safe iterators**
+- **Concurrent collections**
+  - ConcurrentHashMap
+  - CopyOnWriteArrayList
 
 ---
 
-## 8. **Sorting Algorithms**
-- **Basic sorting**
-  - Bubble, Insertion, Selection (O(n²))
-- **Efficient sorting**
-  - Merge sort, Quick sort, Heap sort (O(n log n))
-- **Specialized sorting**
-  - Counting sort
-  - Radix sort
-  - Bucket sort
-- **Sorting in practice**
-  - Stable vs unstable sorting
-  - Library sort implementations
+## 8. **Generics**
+- **Generic classes & methods**
+- **Bounded type parameters**
+- **Wildcards**
+  - `?`, `? extends T`, `? super T`
+- **Type erasure**
+- **Generics best practices**
 
 ---
 
-## 9. **Searching Algorithms**
-- **Linear search**
-- **Binary search**
-  - Iterative & Recursive
-  - Variants: first occurrence, last occurrence, floor/ceil
-- **Search in Rotated Sorted Array**
-- **Ternary search**
-- **Exponential search**
+## 9. **Multithreading & Concurrency**
+- **Thread lifecycle**
+  - Thread class vs Runnable interface
+  - Thread states
+- **Synchronization**
+  - synchronized methods & blocks
+  - Intrinsic locks (monitor)
+- **Inter-thread communication**
+  - wait(), notify(), notifyAll()
+- **Executor framework**
+  - ThreadPoolExecutor
+  - Callable & Future
+- **Concurrency utilities**
+  - Locks (ReentrantLock, ReadWriteLock)
+  - Semaphores, CountDownLatch, CyclicBarrier
+  - Concurrent collections
+- **Fork/Join framework**
+- **Volatile & Atomic classes**
 
 ---
 
-## 10. **Trees**
-- **Binary Trees**
-  - Traversals: Inorder, Preorder, Postorder, Level-order
-  - Height, Diameter
-  - Serialization/Deserialization
-- **Binary Search Trees (BST)**
-  - Insertion, Deletion, Searching
-  - Balanced BST
-- **Heaps**
-  - Min-heap, Max-heap
-  - Heapify operation
-  - Applications: priority queue, heap sort
-- **Advanced Trees**
-  - AVL Trees
-  - Red-Black Trees
-  - Segment Trees (range queries, lazy propagation)
-  - Fenwick Tree (Binary Indexed Tree)
+## 10. **Java I/O (Input/Output)**
+- **Byte Streams vs Character Streams**
+- **File I/O**
+  - FileInputStream, FileOutputStream
+  - FileReader, FileWriter
+- **Buffered I/O**
+  - BufferedReader, BufferedWriter
+- **Serialization**
+  - Serializable interface
+  - Externalizable
+- **NIO (New I/O)**
+  - Channels, Buffers, Selectors
+  - Path & Files API (Java 7+)
 
 ---
 
-## 11. **Graphs**
-- **Representation**
-  - Adjacency Matrix
-  - Adjacency List
-- **Traversal**
-  - BFS, DFS
-  - Applications (connected components, cycle detection, bipartite check)
-- **Shortest Path**
-  - Dijkstra’s
-  - Bellman-Ford
-  - Floyd-Warshall
-- **Minimum Spanning Tree (MST)**
-  - Kruskal’s algorithm
-  - Prim’s algorithm
-- **Advanced topics**
-  - Topological sorting
-  - Strongly connected components (Kosaraju, Tarjan)
-  - Union-Find (Disjoint Set Union - DSU)
-  - Graph coloring
+## 11. **Java 8 Features**
+- **Functional Interfaces**
+  - `@FunctionalInterface`
+  - Common ones: Runnable, Callable, Comparator
+- **Lambda Expressions**
+  - Syntax & use cases
+- **Streams API**
+  - Intermediate vs Terminal operations
+  - Map, Filter, Reduce
+  - Collectors
+- **Optional**
+  - Avoiding NullPointerExceptions
+- **Default & Static methods in interfaces**
+- **Date & Time API**
+  - LocalDate, LocalTime, LocalDateTime
+  - Duration, Period, ZonedDateTime
 
 ---
 
-## 12. **Dynamic Programming (DP)**
-- **Fundamentals**
-  - Memoization vs Tabulation
-  - Overlapping subproblems
-- **Classic problems**
-  - Fibonacci
-  - Knapsack (0/1, Unbounded, Bounded)
-  - Coin Change
-  - Longest Increasing Subsequence (LIS)
-  - Matrix Chain Multiplication
-  - Longest Common Subsequence (LCS)
-  - Edit Distance
-- **Advanced**
-  - DP on Trees
-  - DP with Bitmasking
-  - Digit DP
+## 12. **Advanced Java Features**
+- **Reflection API**
+  - Accessing classes, fields, methods at runtime
+- **Annotations**
+  - Built-in annotations (`@Override`, `@Deprecated`, `@FunctionalInterface`)
+  - Custom annotations
+- **Inner Classes**
+  - Static, non-static, anonymous
+- **Enums**
+  - Enum with methods
+- **Var keyword (Java 10+)**
+- **Records (Java 14+)**
+- **Sealed Classes (Java 17+)**
 
 ---
 
-## 13. **Greedy Algorithms**
-- **Activity selection**
-- **Huffman coding**
-- **Fractional Knapsack**
-- **Job sequencing**
-- **Interval scheduling**
+## 13. **JVM Internals**
+- **JVM Architecture**
+  - ClassLoader subsystem
+  - Runtime Data Areas (Heap, Stack, Method Area, PC Register, Native Method Stack)
+  - Execution Engine
+- **Class loading**
+  - Loading, Linking, Initialization
+  - ClassLoader types (Bootstrap, Extension, Application, Custom)
+- **JIT Compiler**
+- **Performance tuning basics**
 
 ---
 
-## 14. **Bit Manipulation**
-- **Basics**
-  - AND, OR, XOR, NOT, Shift operations
-- **Tricks**
-  - Check even/odd
-  - Swapping without temp variable
-  - Power of two check
-  - Counting set bits
-- **Applications**
-  - Subset generation
-  - Bitmask DP
-  - Fast exponentiation
+## 14. **Best Practices**
+- **Effective Java principles**
+- **Immutability**
+- **Thread-safety practices**
+- **Coding standards**
+- **Design principles (SOLID) applied in Java**
 
 ---
 
-## 15. **Mathematical Algorithms**
-- **Number Theory**
-  - GCD, LCM
-  - Modular arithmetic
-  - Modular exponentiation
-  - Extended Euclidean algorithm
-- **Prime numbers**
-  - Sieve of Eratosthenes
-  - Miller-Rabin primality test
-- **Combinatorics**
-  - nCr, Factorials
-  - Pascal’s triangle
-- **Others**
-  - Matrix exponentiation
-  - Fast Fourier Transform (FFT) (advanced)
+## 15. **Testing in Java**
+- **JUnit (4 & 5)**
+- **Mockito (Basics)**
+- **TestNG**
+- **Best practices in unit testing**
 
 ---
 
-## 16. **Advanced Topics**
-- **String algorithms**
-  - Suffix arrays
-  - Suffix trees
-- **Graph algorithms**
-  - Maximum Flow (Ford-Fulkerson, Edmonds-Karp)
-  - Minimum Cut
-- **Range queries**
-  - Sparse Table
-  - Mo’s Algorithm
-
----
-
-## 17. **Practice & Problem Solving**
-- **Problem-solving platforms**
-  - LeetCode, Codeforces, HackerRank, GFG
-- **Patterns**
-  - Sliding window
-  - Two pointers
-  - Fast/slow pointers
-  - Recursion to iteration conversion
-- **Mock practice**
-  - Time-bound coding
-  - Contest-style problem solving
+## 16. **Tools & Ecosystem**
+- **Build tools**
+  - Maven, Gradle
+- **IDEs**
+  - IntelliJ IDEA, Eclipse
+- **Code Quality**
+  - SonarLint, Checkstyle
+- **Logging**
+  - Log4j, SLF4J, Logback
