@@ -97,10 +97,9 @@ Topics carry a study-time budget: `30 min` · `2 h` · `1 day` · `2 days` · `1
 | 14 | [Advanced/Specialist](14_advanced_specialist_topics.md) | ★★☆☆☆ | Specialized | Event sourcing, CQRS, consensus, mesh |
 | 15 | [Soft Skills & Interview Prep](15_soft_skills_interview_prep.md) | ★★★★★ | Foundation | STAR, trade-off comms, storytelling |
 | 16 | [Misc / Nice-to-have](16_misc_nice_to_have.md) | ★★★☆☆ | Mixed | CDN, secrets/KMS, data modeling |
-| 17 | [Final Notes (actionable)](17_final_notes_actionable.md) | — | — | Sequencing + readiness self-check |
-| 18 | [Learning Timeline](18_learning_timeline.md) | — | — | Day-by-day execution plan |
+| 18 | [Learning Timeline](18_learning_timeline.md) | — | — | Day-by-day execution plan + anchor project + readiness self-check |
 
-Supporting docs: [`0_overview.md`](0_overview.md) (master priority table) · [`CHANGELOG.md`](CHANGELOG.md) (what changed & why).
+Supporting docs: [`0_overview.md`](0_overview.md) (master priority table).
 
 ---
 

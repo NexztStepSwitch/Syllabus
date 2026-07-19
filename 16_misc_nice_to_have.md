@@ -2,7 +2,7 @@
 
 > **Module rating:** ★★★☆☆ (Situational) · **Difficulty:** Mixed · **Est. effort:** 1–2 days total · **Depth target:** Awareness → Production (as needed)
 > **Prerequisites:** [System Design](4_system_design.md), [API/Security](7_api_security_networking.md), [Databases](6_databases_relational_nosql.md).
-> **Nav:** [◀ Soft Skills](15_soft_skills_interview_prep.md) · [Next ▶ Final Notes](17_final_notes_actionable.md) · **Related:** [DevOps](11_devops_cicd_cloud.md), [Performance](10_performance_profiling_reliability.md)
+> **Nav:** [◀ Soft Skills](15_soft_skills_interview_prep.md) · [Next ▶ Learning Timeline](18_learning_timeline.md) · **Related:** [DevOps](11_devops_cicd_cloud.md), [Performance](10_performance_profiling_reliability.md)
 
 ---
 
@@ -81,4 +81,4 @@ A short catch-all for cross-cutting concerns that recur in design rounds but don
 
 ---
 
-**Nav:** [◀ Soft Skills](15_soft_skills_interview_prep.md) · [Next ▶ Final Notes (actionable)](17_final_notes_actionable.md)
+**Nav:** [◀ Soft Skills](15_soft_skills_interview_prep.md) · [Next ▶ Learning Timeline](18_learning_timeline.md)

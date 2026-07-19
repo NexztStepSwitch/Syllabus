@@ -42,7 +42,7 @@ Spring Boot is the default Java backend framework; the "deep dive into what's on
 - **Related:** [Auth deep dive](7_api_security_networking.md).
 
 ### `RestClient` & declarative HTTP Interfaces — ★★★★☆ · Intermediate · 1 day
-- **Why:** the **modern Spring HTTP client**. `RestTemplate` is deprecated (Spring 7.0 announced, 7.1 formal, removal 8.0).
+- **Why:** the **modern Spring HTTP client**. `RestTemplate` is deprecated in favor of `RestClient`: doc-level deprecation in **Spring Framework 7.0** (Nov 2025), formal `@Deprecated` annotation in **7.1** (2026, [issue #36574](https://github.com/spring-projects/spring-framework/issues/36574)), removal targeted for **8.0**.
 - **What exactly:** `RestClient` (synchronous, fluent, virtual-thread friendly); declarative `@HttpExchange` interfaces; timeouts, error handling, interceptors; `WebClient` **only** for reactive/WebFlux stacks.
 - **Interview Qs:** "which HTTP client for a new Spring MVC service, and why?" (RestClient/HTTP Interfaces); "why is RestTemplate being retired?"
 - **Red flags:** choosing `RestTemplate` for greenfield; pulling in WebFlux just to use `WebClient` in a blocking app; no timeouts on outbound calls.

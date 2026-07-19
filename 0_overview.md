@@ -15,8 +15,6 @@
 - **Up:** Virtual Threads, `RestClient`/HTTP Interfaces, cost reasoning in design, OpenTelemetry, Kubernetes debugging, Testcontainers, idempotency, LLD practice, Kafka (now core).
 - **Down / Legacy:** `RestTemplate` (deprecated), Spring XML, JUnit 4, WebFlux-as-default, HATEOAS, competitive-only DSA (FFT/suffix trees/Mo's/max-flow), Paxos/Raft deep dive, service-mesh internals, event sourcing/CQRS deep dive, Spark/big-data.
 
-Per-file diff: [`CHANGELOG.md`](CHANGELOG.md).
-
 ---
 
 ## Master priority table

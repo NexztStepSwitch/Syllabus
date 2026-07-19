@@ -1,7 +1,7 @@
 # 18 — Learning Timeline (Execution Plan)
 
 > The day-by-day plan that turns this repo into an offer. **Primary track: ~16 weeks (110 days)**, assuming **2–3 h weekdays / 5–6 h weekends**. Accelerated **30 / 45 / 60-day** tracks below.
-> **Nav:** [◀ Final Notes](17_final_notes_actionable.md) · [Overview](0_overview.md) · [README](README.md)
+> **Nav:** [◀ Misc / Nice-to-have](16_misc_nice_to_have.md) · [Overview](0_overview.md) · [README](README.md)
 
 ---
 
@@ -38,7 +38,7 @@ Each day lists: **Objective · Topics (linked) · Est. hours · Exercises · Che
 | 3 | Two pointers + sliding window | [Two pointers/window](1_dsa.md) | 2 | :hammer: 3 problems (min window, longest substring). |
 | 4 | Binary search + answer-space | [Binary search](1_dsa.md) | 3 | :hammer: rotated-array min, Koko bananas. **Checkpoint:** prove predicate monotonicity. |
 | 5 | Stacks/queues/monotonic | [Stacks/Queues](1_dsa.md) | 2 | :hammer: valid parens, daily temperatures. |
-| 6 (wknd) | Build kickoff + revise | [Anchor project](17_final_notes_actionable.md#the-anchor-project-build-this) | 5 | :hammer: scaffold Spring Boot 3.x project (empty). :arrows_counterclockwise: week's patterns. |
+| 6 (wknd) | Build kickoff + revise | [Anchor project](#the-anchor-project-build-this) | 5 | :hammer: scaffold Spring Boot 3.x project (empty). :arrows_counterclockwise: week's patterns. |
 | 7 (wknd) | Trees | [Trees & BST](1_dsa.md) | 5 | :hammer: traversals, LCA, validate BST, serialize. :dart: self-mock 1 medium timed. |
 
 ### Week 2 — DSA graphs/DP + Java fundamentals
@@ -194,7 +194,7 @@ Each day lists: **Objective · Topics (linked) · Est. hours · Exercises · Che
 | 87 | CDC/outbox | [ETL](13_data_engineering_big_data.md) | 2 | :hammer: wire outbox → Kafka. |
 | 88 | Advanced concepts | [Advanced](14_advanced_specialist_topics.md) | 2 | :books: event sourcing/CQRS/consensus — when-to-use only. |
 | 89 | DSA revision | [DSA](1_dsa.md) | 2 | :hammer: 3 hard-ish problems. |
-| 90 (wknd) | :checkered_flag: **Milestone 5 — anchor project complete** | [Anchor project](17_final_notes_actionable.md#the-anchor-project-build-this) | 6 | :hammer: integrate Kafka into project (full stack done). |
+| 90 (wknd) | :checkered_flag: **Milestone 5 — anchor project complete** | [Anchor project](#the-anchor-project-build-this) | 6 | :hammer: integrate Kafka into project (full stack done). |
 | 91 (wknd) | :arrows_counterclockwise: Consolidate | [Overview](0_overview.md) | 5 | :arrows_counterclockwise: build a personal cheatsheet across all modules. |
 
 ### Week 14 — REVISION WEEK (no new topics)
@@ -232,9 +232,48 @@ Each day lists: **Objective · Topics (linked) · Est. hours · Exercises · Che
 | 107 | Design cheatsheet | [System Design](4_system_design.md) | 2 | :arrows_counterclockwise: 1-page framework + numbers. |
 | 108 | Java/Spring rapid | [Java](2_core_java.md) / [Spring](3_spring_and_spring_boot.md) | 2 | :arrows_counterclockwise: checklists only. |
 | 109 | Behavioral polish | [Soft skills](15_soft_skills_interview_prep.md) | 2 | :dart: 2-min STAR delivery. |
-| 110 | :checkered_flag: **Interview-ready** | [Self-check](17_final_notes_actionable.md#interview-readiness-self-check) | 2 | Complete the readiness self-check → apply broadly. |
+| 110 | :checkered_flag: **Interview-ready** | [Self-check](#interview-readiness-self-check) | 2 | Complete the readiness self-check → apply broadly. |
 
 > **Checkpoint 6:** all readiness self-check items "Yes." Keep a light DSA + one mock/week going while interviewing.
+
+---
+
+## The Anchor Project (build this)
+
+One end-to-end service you build **once** and reuse for every design story, LLD discussion, and "walk me through something you built" question. Depth beats breadth — one system you can defend cold is worth more than five toy repos.
+
+**What to build:** a realistic backend slice with genuine concurrency and consistency concerns — e.g. an order/payment service, a URL shortener with analytics, or a ticket-booking system.
+
+**Must touch (each maps to a module):**
+- **Spring Boot 3.x REST API** — DTO records, Bean Validation, `@ControllerAdvice` error contract → [3](3_spring_and_spring_boot.md)
+- **PostgreSQL via Spring Data JPA** — sane indexing, no N+1, `open-in-view=false` → [6](6_databases_relational_nosql.md)
+- **Redis cache** — cache-aside with TTL + stampede protection → [10](10_performance_profiling_reliability.md)
+- **Kafka** — at least one producer/consumer with idempotent handling → [13](13_data_engineering_big_data.md), [5](5_microservices_distributed_systems.md)
+- **Spring Security 6** — stateless JWT + `@PreAuthorize` → [7](7_api_security_networking.md)
+- **Observability** — Actuator, Micrometer → Prometheus, OpenTelemetry traces, correlation IDs → [8](8_observability_monitoring_logging.md)
+- **Testing** — JUnit 5 + Mockito + Testcontainers integration tests → [9](9_testing_quality.md)
+- **Packaging** — Docker multi-stage build; run on local K8s (kind/minikube) with liveness/readiness probes → [11](11_devops_cicd_cloud.md)
+
+**Stretch (differentiators):** virtual threads enabled + validated (no pinning); a Resilience4j circuit breaker on an outbound call; an outbox/SAGA for cross-service consistency; a k6 load test with a p99 target.
+
+**Deliverables:** a public repo with a clear README (architecture diagram, run instructions, and design decisions + trade-offs) and a **2-minute verbal walkthrough** you can give from memory.
+
+---
+
+## Interview-readiness self-check
+
+Tick every item **"Yes"** before applying broadly (calibrated to ~3.5 YOE):
+
+- **DSA:** recognize the pattern for a medium in <2 min; state time/space; narrate edge cases while coding.
+- **Core Java:** explain `HashMap`/`ConcurrentHashMap` internals, JMM (`volatile`/happens-before), thread-pool sizing, virtual threads + pinning.
+- **Spring:** defend `@Transactional` semantics, N+1 fixes, Security 6 JWT, and `RestClient` vs `RestTemplate`.
+- **HLD:** run the full flow — requirements → capacity → high-level → deep-dive → scale + cost + failure modes + observability — unprompted.
+- **LLD:** go from requirements to a class design with SOLID + a pattern + concurrency in ~40 min.
+- **Databases:** read an `EXPLAIN`, design indexes, and reason about isolation levels and locking.
+- **Distributed:** explain idempotency, delivery semantics, and one resilience pattern with a concrete example.
+- **Anchor project:** deliver the 2-minute walkthrough and defend three trade-offs you made.
+- **Behavioral:** tell 6–8 STAR stories with measurable impact, matched to the target role.
+- **Logistics:** resume reflects impact; target-company list built; recruiter chats confirm interview format + AI policy.
 
 ---
 
@@ -281,4 +320,4 @@ Every 3 wk  revision checkpoint + full mock loop
 
 ---
 
-**Nav:** [◀ Final Notes](17_final_notes_actionable.md) · [Overview](0_overview.md) · [README](README.md)
+**Nav:** [◀ Misc / Nice-to-have](16_misc_nice_to_have.md) · [Overview](0_overview.md) · [README](README.md)
