@@ -1,217 +1,186 @@
-# Complete checklist — every topic (rated ★=importance for a 2-yr backend engineer building scalable, fault-proof systems)
+# 0 — Overview & Master Priority Table
 
-Below I combined **every topic name** from the previous replies + the missing ones, grouped for readability. Each line is: **Topic name — rating (★/5)** — *one-line reason*.
-(★ = 5 means very important.)
+> Navigation index and single source of truth for **ratings** across the repository. Ratings reflect importance for a **~3.5 YOE Java/Spring backend engineer** in 2026, derived from current hiring trends.
+>
+> New here? Read [`README.md`](README.md) first for the legends and learning philosophy.
 
----
+**Legend:** ★★★★★ Mandatory · ★★★★☆ High ROI · ★★★☆☆ Situational · ★★☆☆☆ Differentiator · ★☆☆☆☆ Low ROI (basics only). Difficulty: `Foundation` / `Intermediate` / `Advanced` / `Specialized`.
 
-## Data Structures & Algorithms
-
-* **Arrays** — ★★★★☆ — fundamental for coding and many problems.
-* **Strings** — ★★★★☆ — extremely common in interviews and parsing.
-* **LinkedList** — ★★★☆☆ — basic structure, useful for some problems.
-* **Stack** — ★★★☆☆ — common in parsing, backtracking.
-* **Queue** — ★★★☆☆ — used in BFS, producer/consumer patterns.
-* **HashMap / HashTable** — ★★★★★ — essential for fast lookups.
-* **Set** — ★★★★☆ — membership checks / deduplication.
-* **PriorityQueue / Heap** — ★★★★☆ — scheduling, top-k problems.
-* **Trie** — ★★★☆☆ — prefix problems, autocomplete.
-* **Graph** — ★★★★★ — modeling relationships, networks, dependencies.
-* **Disjoint Set (Union-Find)** — ★★★☆☆ — connectivity, Kruskal.
-* **Segment Tree / Fenwick Tree** — ★★★☆☆ — range queries, advanced problems.
-* **Binary Search & Variants** — ★★★★☆ — speedups & search problems.
-* **Sorting algorithms (merge, quick, counting, etc.)** — ★★★★☆ — basics + complexity tradeoffs.
-* **Graph algorithms (DFS, BFS, Dijkstra, Bellman-Ford, Floyd-Warshall)** — ★★★★☆ — pathfinding & connectivity.
-* **Greedy algorithms** — ★★★★☆ — many optimal substructure problems.
-* **Dynamic Programming (knapsack, LIS, etc.)** — ★★★★☆ — common medium/hard problems.
-* **Complexity analysis (Big-O time/space)** — ★★★★★ — must explain tradeoffs in interviews.
+> This table summarizes the **guide** (priorities). The **exhaustive topic checklist** for each area lives at the bottom of its module under `## Detailed Syllabus (topic checklist)` — the full sub-topic inventory to verify you've covered everything.
 
 ---
 
-## Java Core
+## How the priorities changed vs the old 2-YOE list
 
-* **OOP principles (encapsulation, abstraction, inheritance, polymorphism)** — ★★★★★ — core for design & LLD.
-* **Exception handling** — ★★★★☆ — robust error handling.
-* **Collections framework** — ★★★★★ — daily use.
-* **Generics** — ★★★★☆ — type safety in collections/APIs.
-* **Java 8 features (Streams, Lambdas, Optional, Functional Interfaces)** — ★★★★★ — modern Java style.
-* **Multithreading & Concurrency basics (synchronized, volatile, locks)** — ★★★★★ — critical for correctness & performance.
-* **Concurrency utilities (ExecutorService, CountDownLatch, ConcurrentHashMap)** — ★★★★★ — production concurrency.
-* **Memory management (Heap, Stack, GC basics)** — ★★★★☆ — debugging memory/GC issues.
-* **JVM tuning & GC tuning** — ★★★★☆ — needed for latency-sensitive systems.
+- **Up:** Virtual Threads, `RestClient`/HTTP Interfaces, cost reasoning in design, OpenTelemetry, Kubernetes debugging, Testcontainers, idempotency, LLD practice, Kafka (now core).
+- **Down / Legacy:** `RestTemplate` (deprecated), Spring XML, JUnit 4, WebFlux-as-default, HATEOAS, competitive-only DSA (FFT/suffix trees/Mo's/max-flow), Paxos/Raft deep dive, service-mesh internals, event sourcing/CQRS deep dive, Spark/big-data.
+
+Per-file diff: [`CHANGELOG.md`](CHANGELOG.md).
 
 ---
 
-## Spring & Spring Boot
+## Master priority table
 
-* **Dependency Injection & Bean lifecycle** — ★★★★★ — core Spring concept.
-* **Autowiring / @Component / @Service / @Repository** — ★★★★★ — dependency wiring.
-* **REST APIs (controllers, RequestMapping, ResponseEntity)** — ★★★★★ — daily work.
-* **Exception handling in Spring (ControllerAdvice)** — ★★★★☆ — consistent error responses.
-* **Spring Data JPA / Hibernate (ORM, entity relationships, lazy vs eager)** — ★★★★★ — DB access layer.
-* **Spring Security basics (authentication, roles)** — ★★★★☆ — baseline security.
-* **JWT integration with Spring Security** — ★★★★★ — token-based auth in microservices.
-* **Actuator, Profiles, properties management** — ★★★★☆ — monitoring & environment config.
-* **Spring Boot testing (MockMvc, @WebMvcTest, @SpringBootTest)** — ★★★★☆ — integration/unit test suites.
+### [1 — DSA](1_dsa.md) · module ★★★★★
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Arrays, Strings, Hashing | ★★★★★ | Foundation | bedrock of coding rounds |
+| Two pointers / Sliding window | ★★★★★ | Foundation | highest-frequency patterns |
+| Binary search (+ answer-space) | ★★★★★ | Intermediate | disproportionately common (India) |
+| Trees / BST / traversals | ★★★★★ | Intermediate | interview staple |
+| Graphs (BFS/DFS/topo/Dijkstra/Union-Find) | ★★★★★ | Intermediate→Advanced | modeling + pathfinding |
+| Heaps / Top-K | ★★★★☆ | Intermediate | streaming/ranking |
+| Dynamic Programming (core) | ★★★★☆ | Advanced | medium/hard rounds |
+| Stacks/Queues/Monotonic | ★★★★☆ | Foundation | parsing, windows |
+| Tries | ★★★☆☆ | Intermediate | prefix/autocomplete |
+| Greedy, Intervals | ★★★★☆ | Intermediate | scheduling |
+| Bit manipulation | ★★★☆☆ | Intermediate | basics + bitmask DP |
+| Segment/Fenwick tree | ★★☆☆☆ | Advanced | occasional |
+| FFT, suffix trees, Mo's, max-flow | ★☆☆☆☆ | Specialized | competitive-only — stub |
 
----
+### [2 — Core Java](2_core_java.md) · module ★★★★★
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| OOP + SOLID | ★★★★★ | Foundation | LLD backbone |
+| Collections framework | ★★★★★ | Foundation | daily + internals asked |
+| Streams / Lambdas / Optional | ★★★★★ | Foundation | modern idiom |
+| Concurrency (memory model, locks, executors, `CompletableFuture`) | ★★★★★ | Advanced | correctness under load |
+| Virtual Threads (Java 21) + pinning | ★★★★☆ | Intermediate | production concurrency |
+| Records, Sealed, Pattern matching | ★★★★☆ | Foundation→Intermediate | modern Java |
+| Generics, Exceptions | ★★★★☆ | Foundation | type safety, robustness |
+| Memory model + GC (G1/ZGC) | ★★★☆☆ | Advanced | debugging/tuning |
+| Structured Concurrency / Scoped Values (preview) | ★★☆☆☆ | Advanced | awareness |
+| Applets, classloader trivia, finalizers | ★☆☆☆☆ | — | Legacy — stub |
 
-## System Design (HLD & LLD)
+### [3 — Spring & Spring Boot](3_spring_and_spring_boot.md) · module ★★★★★
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| DI / bean lifecycle | ★★★★★ | Foundation | core |
+| REST controllers + validation + error handling | ★★★★★ | Intermediate | daily |
+| Spring Data JPA / Hibernate (lazy/eager, N+1) | ★★★★★ | Intermediate→Advanced | data layer |
+| Spring Security 6 + JWT/OAuth2 | ★★★★☆ | Advanced | auth |
+| `RestClient` / HTTP Interfaces | ★★★★☆ | Intermediate | modern HTTP client |
+| Actuator + Micrometer + OTel | ★★★★☆ | Intermediate | observability |
+| Virtual-thread enablement | ★★★★☆ | Intermediate | one property + tuning |
+| Profiles/config, Testcontainers | ★★★★☆ | Intermediate | env + testing |
+| GraalVM native image | ★★☆☆☆ | Advanced | situational |
+| `RestTemplate`, XML config, WebFlux-as-default | ★☆☆☆☆ | — | Legacy/situational — stub |
 
-* **Low-Level Design (class diagrams, UML, OOP design)** — ★★★★★ — LLD interview rounds.
-* **High-Level Design (service boundaries, components, data flow)** — ★★★★★ — system design interviews.
-* **Scalability concepts (load balancer, horizontal vs vertical scaling)** — ★★★★★ — scaling systems.
-* **Caching (cache-aside, write-through, TTL, invalidation strategies)** — ★★★★★ — performance & cost control.
-* **Database sharding** — ★★★★☆ — scale large datasets.
-* **Replication (master-replica, multi-AZ)** — ★★★★☆ — availability.
-* **Consistency models & CAP theorem** — ★★★★★ — design tradeoffs.
-* **Message queues (Kafka, RabbitMQ)** — ★★★★★ — async/streaming patterns.
-* **API design (REST, GraphQL, gRPC basics)** — ★★★★★ — contract design & performance.
-* **Event-driven architectures vs request-response** — ★★★★★ — design style for scale/resilience.
-* **Rate limiting & throttling** — ★★★★☆ — protect services from abuse/overload.
-* **Idempotency patterns** — ★★★★☆ — safe retries.
-* **Service discovery & API Gateway** — ★★★★☆ — microservices infra.
-* **Load balancing strategies, sticky sessions, health checks** — ★★★★☆ — availability & routing.
-* **Design patterns (Factory, Singleton, Strategy, Observer, Builder, Adapter, etc.)** — ★★★★☆ — reusable design solutions.
-* **Practical LLD problems (parking lot, library, elevator, rate limiter)** — ★★★★☆ — interview staples.
-* **Capacity planning & cost considerations** — ★★★★☆ — real-world design constraint.
+### [4 — System Design (HLD + LLD)](4_system_design.md) · module ★★★★★
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Requirements + back-of-envelope | ★★★★★ | Intermediate | every interview |
+| Caching (strategies, stampede, hot keys) | ★★★★★ | Intermediate | top optimization |
+| Load balancing + horizontal scaling | ★★★★★ | Intermediate | universal |
+| Replication + sharding | ★★★★★ | Advanced | scale |
+| Consistency / CAP / PACELC | ★★★★★ | Advanced | central trade-off |
+| Rate limiting | ★★★★☆ | Intermediate | infra staple |
+| Message queues / Kafka in design | ★★★★★ | Advanced | decoupling |
+| API design + idempotency | ★★★★☆ | Intermediate | correctness |
+| **Cost + failure modes + observability** | ★★★★★ | Advanced | now explicitly graded |
+| LLD (OOP, patterns, concurrency, machine coding) | ★★★★★ | Intermediate→Advanced | distinct round |
+| AI/LLM infra (gateway, RAG, vector DB, fallback) | ★★★☆☆ | Advanced | rising [MIXED] |
+| Design patterns (GoF core) | ★★★★☆ | Intermediate | LLD |
 
----
+### [5 — Microservices & Distributed Systems](5_microservices_distributed_systems.md) · module ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Decomposition + boundaries | ★★★★☆ | Advanced | design |
+| Comms: REST/gRPC/async | ★★★★☆ | Advanced | trade-offs |
+| Resilience (circuit breaker/retry/backoff/bulkhead) | ★★★★☆ | Advanced | Resilience4j |
+| Idempotency + delivery semantics | ★★★★☆ | Advanced | fintech |
+| SAGA / distributed transactions | ★★★★☆ | Advanced | consistency |
+| Backpressure / flow control | ★★★☆☆ | Advanced | stability |
+| Consensus (Raft/Paxos) | ★★☆☆☆ | Specialized | conceptual only |
+| Service mesh internals | ★★☆☆☆ | Specialized | situational |
 
-## Microservices & Distributed Systems
+### [6 — Databases](6_databases_relational_nosql.md) · module ★★★★★
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Transactions/ACID/isolation/locks | ★★★★★ | Advanced | correctness |
+| Indexing + `EXPLAIN` + tuning | ★★★★★ | Intermediate→Advanced | top real skill |
+| SQL (joins, windows, CTEs) | ★★★★★ | Intermediate | daily + interview |
+| Schema design + normalization | ★★★★☆ | Intermediate | design |
+| Sharding + replication | ★★★★☆ | Advanced | scale |
+| NoSQL selection (Redis/Mongo/Cassandra/Dynamo) | ★★★★☆ | Intermediate | when-to-use |
+| Migrations (Flyway/Liquibase) | ★★★☆☆ | Intermediate | hygiene |
+| Time-series DB | ★★☆☆☆ | Intermediate | situational |
 
-* **Microservice decomposition principles** — ★★★★★ — system boundaries.
-* **Inter-service communication (REST vs gRPC vs async MQ)** — ★★★★★ — tradeoffs.
-* **Distributed transactions (2PC, SAGA pattern)** — ★★★★☆ — data consistency across services.
-* **Fault tolerance (circuit breakers, retries, exponential backoff)** — ★★★★★ — resiliency.
-* **Observability (logging, metrics, tracing)** — ★★★★★ — debugging distributed systems.
-* **Service mesh basics (Istio) & sidecars** — ★★★☆☆ — advanced traffic management.
-* **Exactly-once / at-least-once semantics & event delivery guarantees** — ★★★★☆ — correctness for streams.
-* **Event sourcing & CQRS** — ★★★☆☆ — specialized patterns for auditability and scalability.
-* **Consensus basics (Raft, Paxos) — conceptual** — ★★★☆☆ — distributed coordination.
-* **Backpressure & flow control in streaming systems** — ★★★★☆ — stability under load.
+### [7 — API, Security & Networking](7_api_security_networking.md) · ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| REST design + versioning + pagination | ★★★★★ | Intermediate | daily |
+| OAuth2 / OIDC / JWT (+ pitfalls) | ★★★★★ | Advanced | auth flows |
+| TLS + encryption at rest/in transit | ★★★★☆ | Intermediate | security baseline |
+| OWASP Top 10 + input validation | ★★★★★ | Intermediate | hygiene |
+| gRPC / GraphQL | ★★★☆☆ | Intermediate | situational |
+| HTTP/DNS/TCP fundamentals | ★★★★☆ | Foundation | debugging |
+| Sockets / low-level networking | ★★☆☆☆ | Advanced | basics only |
+| HATEOAS | ★☆☆☆☆ | — | stub |
 
----
+### [8 — Observability](8_observability_monitoring_logging.md) · ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Structured logging + correlation IDs | ★★★★★ | Intermediate | baseline |
+| Metrics (Prometheus/Micrometer) | ★★★★☆ | Intermediate | health |
+| Tracing + OpenTelemetry | ★★★★☆ | Intermediate | distributed debugging |
+| SLI/SLO/error budgets, RED/USE | ★★★★☆ | Intermediate | reliability literacy |
+| ELK/EFK | ★★★☆☆ | Intermediate | consolidating |
 
-## Databases (Relational & NoSQL)
+### [9 — Testing & Quality](9_testing_quality.md) · ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| JUnit 5 + Mockito | ★★★★★ | Foundation | baseline |
+| Integration tests + Testcontainers | ★★★★☆ | Intermediate | modern standard |
+| Contract testing | ★★★☆☆ | Intermediate | microservices |
+| Load testing (k6) | ★★★☆☆ | Intermediate | validate scale |
+| TDD | ★★☆☆☆ | Intermediate | approach |
+| JUnit 4 | ★☆☆☆☆ | — | Legacy — stub |
 
-* **Relational DB concepts: normalization, denormalization** — ★★★★★ — schema design tradeoffs.
-* **Transactions (ACID), isolation levels, deadlocks** — ★★★★★ — correctness & concurrency.
-* **SQL queries: joins, subqueries, GROUP BY, window functions, CTEs** — ★★★★★ — real query skills.
-* **Indexing strategies & explain plans (performance tuning)** — ★★★★★ — query optimization.
-* **Schema migrations (Flyway, Liquibase)** — ★★★★☆ — safe DB changes.
-* **NoSQL basics: MongoDB (document), Cassandra (wide-column), Redis (in-memory)** — ★★★★☆ — use cases & tradeoffs.
-* **Time-series DB basics (InfluxDB/Prometheus storage patterns)** — ★★★☆☆ — monitoring/time series use cases.
-* **Blob/object stores (S3) and backups / DR strategies** — ★★★★☆ — large object storage & reliability.
+### [10 — Performance & Reliability](10_performance_profiling_reliability.md) · ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Caching for latency | ★★★★★ | Intermediate | user-facing |
+| Tail latency (p99) | ★★★★☆ | Advanced | real UX |
+| Profiling (JFR/async-profiler, flame graphs) | ★★★★☆ | Advanced | diagnose |
+| Resilience patterns | ★★★★☆ | Advanced | stability |
+| Capacity/autoscaling | ★★★☆☆ | Advanced | cost/load |
+| Microbenchmarks (JMH) | ★★★☆☆ | Advanced | hotspots |
 
----
+### [11 — DevOps, CI/CD & Cloud](11_devops_cicd_cloud.md) · ★★★★☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Docker (multi-stage, image hygiene) | ★★★★☆ | Intermediate | packaging |
+| K8s essentials (probes, resources, debug) | ★★★★☆ | Intermediate→Advanced | run + debug |
+| CI/CD (GitHub Actions) | ★★★★☆ | Intermediate | daily |
+| Cloud fundamentals (AWS) | ★★★★☆ | Intermediate | substrate |
+| Terraform basics | ★★★☆☆ | Intermediate | read/modify |
+| Helm | ★★★☆☆ | Intermediate | deploy |
+| GitOps/ArgoCD, serverless | ★★☆☆☆ | Advanced | situational |
 
-## API, Security & Networking
+### [12 — Build & Tooling](12_build_tooling.md) · ★★★☆☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Maven / Gradle | ★★★★☆ | Foundation | builds |
+| Git (branching, rebase, PRs) | ★★★★★ | Foundation | collaboration |
+| IDE/debugging | ★★★☆☆ | Foundation | productivity |
 
-* **API design best practices (versioning, pagination, HATEOAS, error codes)** — ★★★★★ — maintainable APIs.
-* **Authentication & Authorization (OAuth2, OpenID Connect)** — ★★★★★ — modern auth flows.
-* **Session management, refresh tokens, secrets management** — ★★★★★ — secure sessions & secrets.
-* **TLS / HTTPS basics, encryption at rest & in transit** — ★★★★★ — transport/security basics.
-* **CORS, CSP, OWASP Top 10, input validation** — ★★★★★ — web security hygiene.
-* **DNS basics, HTTP semantics (methods/status codes/headers), TCP/IP basics** — ★★★★☆ — networking fundamentals.
-* **Sockets & low-level networking concepts** — ★★★☆☆ — deeper debugging.
+### [13 — Data Engineering](13_data_engineering_big_data.md) · ★★★☆☆
+| Topic | Rating | Difficulty | Note |
+|-------|--------|-----------|------|
+| Kafka (backend event backbone) | ★★★★★ | Advanced | core |
+| Spark / batch | ★★☆☆☆ | Advanced | role-dependent |
+| ETL/ELT, lake vs warehouse | ★★☆☆☆ | Intermediate | awareness |
 
----
+### [14 — Advanced/Specialist](14_advanced_specialist_topics.md) · ★★☆☆☆
+Event sourcing, CQRS, consensus deep dive, service mesh internals, exactly-once — all **Specialized / situational**. Learn only if the target role demands it.
 
-## Observability, Monitoring & Logging
+### [15 — Soft Skills & Interview Prep](15_soft_skills_interview_prep.md) · ★★★★★
+STAR, trade-off communication, resume storytelling, mock interviews, negotiation — ★★★★★, decisive.
 
-* **Logging (structured logging)** — ★★★★★ — baseline for debugging.
-* **Metrics & monitoring (Prometheus + Grafana concepts)** — ★★★★★ — health & alerts.
-* **Tracing (Jaeger, Zipkin concepts)** — ★★★★★ — distributed request tracing.
-* **ELK/EFK stack (Elasticsearch/Logstash/Fluentd/Kibana)** — ★★★★☆ — log aggregation & search.
-* **SLAs, SLOs, error budgets** — ★★★★☆ — reliability goals & observability metrics.
-
----
-
-## Testing & Quality
-
-* **Unit testing (JUnit)** — ★★★★★ — baseline code correctness.
-* **Mocking (Mockito)** — ★★★★★ — isolation in tests.
-* **Integration testing / end-to-end tests** — ★★★★★ — cross-component correctness.
-* **Contract testing (Pact)** — ★★★★☆ — safe microservice evolution.
-* **Test-driven development (TDD) basics** — ★★★☆☆ — development approach.
-* **Static analysis, linters, code style, code reviews** — ★★★★★ — maintainability and quality.
-* **Performance & load testing (JMeter, k6)** — ★★★★☆ — validate scalability.
-
----
-
-## Performance, Profiling & Reliability
-
-* **Caching strategies (CDN, cache-aside, write-through)** — ★★★★★ — latency reduction.
-* **JVM profiling (VisualVM, YourKit) and thread dumps** — ★★★★☆ — diagnose JVM issues.
-* **Latency analysis & tail latency handling** — ★★★★★ — real-world user experience.
-* **Circuit breakers, bulkheads, graceful degradation** — ★★★★★ — resilience patterns.
-* **Benchmarking & microbenchmarks** — ★★★★☆ — identify hotspots.
-* **Capacity planning & autoscaling strategies** — ★★★★☆ — handling load and cost.
-
----
-
-## DevOps, CI/CD & Cloud
-
-* **Containerization (Docker)** — ★★★★★ — packaging & reproducibility.
-* **Orchestration (Kubernetes basics, pods, services, deployments)** — ★★★★☆ — production deployment.
-* **Helm charts / manifests** — ★★★☆☆ — packaging K8s apps.
-* **CI/CD tools (Jenkins, GitHub Actions, GitLab CI, ArgoCD)** — ★★★★☆ — automated delivery.
-* **Cloud fundamentals (AWS/GCP/Azure compute, storage, IAM)** — ★★★★★ — common deployment platforms.
-* **Serverless basics (AWS Lambda)** — ★★★☆☆ — cost/operational tradeoffs.
-* **Infrastructure as Code (Terraform basics)** — ★★★★☆ — reproducible infra.
-* **Artifact repositories & dependency management (Nexus, Artifactory, Maven Central)** — ★★★★☆ — release management.
-
----
-
-## Build & Tooling
-
-* **Build tools: Maven & Gradle** — ★★★★★ — build & dependency management.
-* **Version control: Git (branching, PRs, rebases)** — ★★★★★ — essential collaboration.
-* **IDE proficiency (IntelliJ / debugging)** — ★★★★☆ — developer productivity.
-
----
-
-## Data Engineering / Big Data (optional / role dependent)
-
-* **Kafka (event streaming concepts, partitions, consumer groups)** — ★★★★☆ — event pipelines & integration.
-* **Spark basics (RDD/DataFrame, batch vs streaming)** — ★★★☆☆ — data processing at scale.
-* **ETL concepts & pipelines** — ★★★★☆ — moving & transforming data.
-* **Data lake vs data warehouse basics** — ★★★☆☆ — storage/analytics choices.
-
----
-
-## Advanced / Specialist Topics
-
-* **Service mesh (Istio) advanced features** — ★★★☆☆ — traffic control & mTLS.
-* **Event sourcing deep dive** — ★★★☆☆ — auditability & rebuildable state.
-* **CQRS deep patterns** — ★★★☆☆ — read/write scaling separation.
-* **Consensus algorithms (Raft/Paxos) deep dive** — ★★★☆☆ — coordination in distributed systems.
-* **Exactly-once semantics & transactional messaging** — ★★★☆☆ — strong guarantees for streams.
-
----
-
-## Soft Skills & Interview Prep
-
-* **Behavioral questions & STAR method** — ★★★★★ — must ace interviews.
-* **Problem decomposition & communicating tradeoffs** — ★★★★★ — critical in design rounds.
-* **Resume & project storytelling** — ★★★★★ — get shortlisted.
-* **Mock interviews & whiteboard practice** — ★★★★★ — interview readiness.
-
----
-
-## Misc / Nice-to-have
-
-* **Denormalization & data modeling patterns** — ★★★★☆ — performance tradeoffs.
-* **Time-series DB patterns** — ★★★☆☆ — use-case specific.
-* **CDN usage & caching at edge** — ★★★★☆ — global performance improvements.
-* **Secrets management (Vault / cloud secrets)** — ★★★★☆ — production security.
-* **Encryption key management basics (KMS)** — ★★★★☆ — protect secrets & data.
+### [16 — Misc / Nice-to-have](16_misc_nice_to_have.md) · ★★★☆☆
+CDN/edge, secrets/KMS, data modeling patterns — cross-linked, condensed.
 
 ---
 
-### Final notes (actionable)
-
-* **Is this list extensive?** — Yes. This is a comprehensive, interview-and-production oriented checklist for a 2-year backend engineer aiming to build scalable, fault-tolerant systems.
-* **Top priorities to master first (start here):** DSA (medium problems), Java core (concurrency, Java 8), Spring Boot (REST + JPA + Security), SQL & indexing, Microservices essentials (MQs, service discovery, faults), Testing (unit + integration), Observability (metrics/logs/tracing), and basic Kubernetes + Docker.
-* If you want, I’ll convert this into a **checkbox checklist** you can mark, or produce a **8-week study plan** with daily tasks and example problems, prioritized by the star ratings. Which one do you want next?
+Next → [`1_dsa.md`](1_dsa.md) · Plan → [`18_learning_timeline.md`](18_learning_timeline.md)
